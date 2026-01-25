@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>VipAutoPay - Automated Payment Gateway</title>
+
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 z-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center space-x-8">
+            <!-- Logo -->
+            <a href="#">
+              <img src="/logo.png" alt="VipAutoPay Logo" class="h-14" />
+            </a>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-6">
+              <a
+                href="#features"
+                class="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                >Features</a
+              >
+              <a
+                href="#pricing"
+                class="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                >Pricing</a
+              >
+              <a
+                href="#docs"
+                class="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                >Documentation</a
+              >
+              <a
+                href="#contact"
+                class="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+          <!-- Desktop Buttons -->
+          <div class="hidden md:flex items-center space-x-4">
+            <button
+              class="text-gray-600 hover:text-gray-900 text-sm font-medium"
+            >
+              Sign In
+            </button>
+            <button class="btn-primary">Get started</button>
+          </div>
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+            <span id="menu-icon"
+              ><i class="fas fa-bars w-6 h-6 text-xl"></i
+            ></span>
+            <span id="close-icon" class="hidden">
+              <i class="fas fa-times w-6 h-6 text-xl"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 pt-16">
+      <div class="flex flex-col p-4 space-y-4">
+        <a
+          href="#features"
+          class="text-gray-600 hover:text-gray-900 text-lg font-medium mobile-link"
+          >Features</a
+        >
+        <a
+          href="#pricing"
+          class="text-gray-600 hover:text-gray-900 text-lg font-medium mobile-link"
+          >Pricing</a
+        >
+        <a
+          href="#docs"
+          class="text-gray-600 hover:text-gray-900 text-lg font-medium mobile-link"
+          >Documentation</a
+        >
+        <a
+          href="#contact"
+          class="text-gray-600 hover:text-gray-900 text-lg font-medium mobile-link"
+          >Contact</a
+        >
+        <button class="btn-primary">Get API Access</button>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-gray-50 to-white"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div
+              class="inline-flex items-center space-x-2 bg-teal-50 border border-teal-100 rounded-full px-4 py-2 mb-6"
+            >
+              <div class="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
+              <span class="text-sm font-medium text-teal-700"
+                >API-First Payment Gateway</span
+              >
+            </div>
+            <h1
+              class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6"
+            >
+              Automated Online Payments for Your Application
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+              Integrate Bangladesh's leading mobile financial services into your
+              app with our secure REST API. Handle deposits and withdrawals
+              seamlessly with bKash, Nagad, Upay, and more.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button
+                class="bg-linear-to-r from-teal-600 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all flex items-center justify-center"
+              >
+                Get API Access
+                <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+              <button
+                class="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-gray-300 transition-all flex items-center justify-center"
+              >
+                <i class="fas fa-code mr-2"></i>
+                View Documentation
+              </button>
+            </div>
+            <div class="mt-8 flex items-center space-x-6 text-sm text-gray-500">
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-teal-600 mr-2"></i>
+                99.9% Uptime SLA
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-teal-600 mr-2"></i>
+                256-bit Encryption
+              </div>
+            </div>
+          </div>
+          <!-- Code Preview -->
+          <div class="relative">
+            <div
+              class="bg-linear-to-br from-teal-50 to-blue-50 rounded-2xl p-8 border border-gray-100"
+            >
+              <div class="bg-white rounded-xl shadow-2xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-xs font-mono text-gray-400"
+                    >POST /api/v1/deposit</span
+                  >
+                  <div class="flex space-x-1">
+                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                  </div>
+                </div>
+                <pre
+                  class="text-xs font-mono text-gray-800 overflow-x-auto p-2 bg-gray-50 rounded"
+                >
+{
+  "amount": 1000,
+  "method": "bkash",
+  "customer_phone": "01712345678",
+  "callback_url": "https://yourapp.com/callback"
+}</pre
+                >
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                  <div class="flex items-center text-xs text-gray-500 mb-2">
+                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    Response: 200 OK
+                  </div>
+                  <pre
+                    class="text-xs font-mono text-gray-800 p-2 bg-gray-50 rounded"
+                  >
+{
+  "status": "success",
+  "transaction_id": "TXN123456789",
+  "payment_url": "https://..."
+}</pre
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supported Payment Methods -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Supported Payment Methods
+          </h2>
+          <p class="text-gray-600">
+            Accept payments through Bangladesh's most popular mobile financial
+            services
+          </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <!-- bKash -->
+          <div
+            class="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-teal-200 hover:shadow-lg transition-all cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 bg-linear-to-br from-pink-500 to-pink-600 rounded-xl mb-4 flex items-center justify-center mx-auto"
+            >
+              <span class="text-white font-bold text-xl">b</span>
+            </div>
+            <p class="text-center font-semibold text-gray-800">bKash</p>
+          </div>
+          <!-- Nagad -->
+          <div
+            class="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-teal-200 hover:shadow-lg transition-all cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 bg-linear-to-br from-orange-500 to-red-600 rounded-xl mb-4 flex items-center justify-center mx-auto"
+            >
+              <span class="text-white font-bold text-xl">N</span>
+            </div>
+            <p class="text-center font-semibold text-gray-800">Nagad</p>
+          </div>
+          <!-- Upay -->
+          <div
+            class="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-teal-200 hover:shadow-lg transition-all cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 bg-linear-to-br from-blue-500 to-blue-600 rounded-xl mb-4 flex items-center justify-center mx-auto"
+            >
+              <span class="text-white font-bold text-xl">U</span>
+            </div>
+            <p class="text-center font-semibold text-gray-800">Upay</p>
+          </div>
+          <!-- Rocket -->
+          <div
+            class="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-teal-200 hover:shadow-lg transition-all cursor-pointer"
+          >
+            <div
+              class="w-16 h-16 bg-linear-to-br from-purple-500 to-purple-600 rounded-xl mb-4 flex items-center justify-center mx-auto"
+            >
+              <span class="text-white font-bold text-xl">R</span>
+            </div>
+            <p class="text-center font-semibold text-gray-800">Rocket</p>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <span
+            class="inline-flex items-center text-sm text-gray-500 bg-gray-50 px-4 py-2 rounded-full"
+          >
+            <div class="w-2 h-2 bg-teal-500 rounded-full mr-2"></div>
+            More payment methods coming soon
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            How VipAutoPay Works
+          </h2>
+          <p class="text-xl text-gray-600">
+            Get started in minutes with our developer-friendly integration
+          </p>
+        </div>
+        <div class="grid md:grid-cols-5 gap-8">
+          <!-- Step 1 -->
+          <div class="relative group">
+            <div
+              class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all h-full border border-gray-100"
+            >
+              <div class="text-4xl mb-4">👤</div>
+              <div class="text-sm font-bold text-teal-600 mb-2">STEP 01</div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">
+                Create Account
+              </h3>
+              <p class="text-sm text-gray-600">
+                Sign up and verify your business details in minutes
+              </p>
+            </div>
+            <div
+              class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-linear-to-r from-teal-200 to-blue-200"
+            ></div>
+          </div>
+          <!-- Step 2 -->
+          <div class="relative group">
+            <div
+              class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all h-full border border-gray-100"
+            >
+              <div class="text-4xl mb-4">🔑</div>
+              <div class="text-sm font-bold text-teal-600 mb-2">STEP 02</div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">Get API Keys</h3>
+              <p class="text-sm text-gray-600">
+                Receive your secure API credentials instantly
+              </p>
+            </div>
+            <div
+              class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-linear-to-r from-teal-200 to-blue-200"
+            ></div>
+          </div>
+          <!-- Step 3 -->
+          <div class="relative group">
+            <div
+              class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all h-full border border-gray-100"
+            >
+              <div class="text-4xl mb-4">⚡</div>
+              <div class="text-sm font-bold text-teal-600 mb-2">STEP 03</div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">
+                Integrate API
+              </h3>
+              <p class="text-sm text-gray-600">
+                Add our REST API to your application with simple code
+              </p>
+            </div>
+            <div
+              class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-linear-to-r from-teal-200 to-blue-200"
+            ></div>
+          </div>
+          <!-- Step 4 -->
+          <div class="relative group">
+            <div
+              class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all h-full border border-gray-100"
+            >
+              <div class="text-4xl mb-4">💳</div>
+              <div class="text-sm font-bold text-teal-600 mb-2">STEP 04</div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">
+                Accept Payments
+              </h3>
+              <p class="text-sm text-gray-600">
+                Start processing deposits and withdrawals automatically
+              </p>
+            </div>
+            <div
+              class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-linear-to-r from-teal-200 to-blue-200"
+            ></div>
+          </div>
+          <!-- Step 5 -->
+          <div class="relative group">
+            <div
+              class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all h-full border border-gray-100"
+            >
+              <div class="text-4xl mb-4">📊</div>
+              <div class="text-sm font-bold text-teal-600 mb-2">STEP 05</div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">
+                Monitor & Scale
+              </h3>
+              <p class="text-sm text-gray-600">
+                Track transactions in real-time via dashboard
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Enterprise-Grade Features
+          </h2>
+          <p class="text-xl text-gray-600">
+            Everything you need to handle payments at scale
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div
+            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+          >
+            <div
+              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+            >
+              <i class="fas fa-shield-alt text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Secure API Authentication
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Industry-standard OAuth 2.0 and API key authentication with IP
+              whitelisting
+            </p>
+          </div>
+          <!-- Feature 2 -->
+          <div
+            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+          >
+            <div
+              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+            >
+              <i class="fas fa-bolt text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Real-Time Processing
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Instant transaction verification with sub-second response times
+            </p>
+          </div>
+          <!-- Feature 3 -->
+          <div
+            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+          >
+            <div
+              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+            >
+              <i class="fas fa-bell text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Webhooks & Callbacks
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Get notified instantly about payment status changes via webhooks
+            </p>
+          </div>
+          <!-- Feature 4 -->
+          <div
+            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+          >
+            <div
+              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+            >
+              <i class="fas fa-chart-bar text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Auto Payout System
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Automated withdrawal processing with configurable rules and limits
+            </p>
+          </div>
+          <!-- Feature 5 -->
+          <div
+            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+          >
+            <div
+              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+            >
+              <i class="fas fa-code text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Transaction Logs
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Complete audit trail with detailed transaction history and reports
+            </p>
+          </div>
+          <!-- Feature 6 -->
+          <div
+            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+          >
+            <div
+              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+            >
+              <i class="fas fa-lock text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">
+              Fraud Prevention
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Advanced rate limiting, velocity checks, and anomaly detection
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section
+      id="docs"
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-gray-900 to-gray-800 text-white"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div
+              class="inline-flex items-center space-x-2 bg-teal-500/20 border border-teal-500/30 rounded-full px-4 py-2 mb-6"
+            >
+              <i class="fas fa-code w-4 h-4 text-teal-400"></i>
+              <span class="text-sm font-medium text-teal-300"
+                >Built for Developers</span
+              >
+            </div>
+            <h2 class="text-4xl font-bold mb-6">API-First Architecture</h2>
+            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+              Simple, predictable REST API designed for modern applications.
+              Complete with comprehensive documentation, code samples, and SDKs
+              for popular frameworks.
+            </p>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-6 h-6 text-teal-400 mr-3 mt-1"
+                ></i>
+                <span class="text-gray-300"
+                  >RESTful API with JSON request/response</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-6 h-6 text-teal-400 mr-3 mt-1"
+                ></i>
+                <span class="text-gray-300"
+                  >Postman collection & OpenAPI specs</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-6 h-6 text-teal-400 mr-3 mt-1"
+                ></i>
+                <span class="text-gray-300"
+                  >Test mode with sandbox environment</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-6 h-6 text-teal-400 mr-3 mt-1"
+                ></i>
+                <span class="text-gray-300"
+                  >Multiple language SDKs available</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-6 h-6 text-teal-400 mr-3 mt-1"
+                ></i>
+                <span class="text-gray-300"
+                  >Detailed error codes and handling</span
+                >
+              </li>
+            </ul>
+            <button
+              class="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold transition-all flex items-center"
+            >
+              Explore Documentation
+              <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+          <div>
+            <div
+              class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl"
+            >
+              <div
+                class="bg-gray-700/50 px-4 py-3 flex items-center justify-between border-b border-gray-600"
+              >
+                <span class="text-xs font-mono text-gray-300">request.js</span>
+                <div class="flex space-x-2">
+                  <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+              </div>
+              <div class="p-6 font-mono text-sm overflow-x-auto">
+                <pre class="text-gray-300">
+const axios = require('axios');
+
+const response = await axios.post(
+  'https://api.vipautopay.com/v1/deposit',
+  {
+    amount: 1000,
+    method: 'bkash',
+    customer_phone: '01712345678',
+    callback_url: 'https://yourapp.com/callback'
+  },
+  {
+    headers: {
+      'Authorization': 'Bearer YOUR_API_KEY',
+      'Content-Type': 'application/json'
+    }
+  }
+);
+
+console.log(response.data);
+// {
+//   "status": "success",
+//   "transaction_id": "TXN123456789",
+//   "payment_url": "https://..."
+// }</pre
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Simple, Transparent Pricing
+          </h2>
+          <p class="text-xl text-gray-600">
+            Choose the plan that fits your business needs
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Starter Plan -->
+          <div class="bg-gray-50 border-2 border-gray-100 rounded-2xl p-8">
+            <h3 class="text-2xl font-bold mb-2 text-gray-900">Starter</h3>
+            <p class="text-sm mb-6 text-gray-600">
+              Perfect for small businesses and startups
+            </p>
+            <div class="mb-6">
+              <span class="text-5xl font-bold text-gray-900">2.5%</span>
+              <span class="text-lg text-gray-600"> per transaction</span>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700"
+                  >Up to ৳500K/month volume</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700">All payment methods</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700">Email support</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700">Basic dashboard</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700">API documentation</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700">7-day settlement</span>
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 rounded-lg font-semibold transition-all bg-linear-to-r from-teal-600 to-blue-700 text-white hover:shadow-lg"
+            >
+              Get Started
+            </button>
+          </div>
+
+          <!-- Business Plan (Popular) -->
+          <div
+            class="bg-linear-to-br from-teal-600 to-blue-700 text-white shadow-2xl scale-105 transform rounded-2xl p-8 relative z-10"
+          >
+            <div
+              class="bg-white/20 text-white text-xs font-bold uppercase px-3 py-1 rounded-full inline-block mb-4"
+            >
+              Most Popular
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-white">Business</h3>
+            <p class="text-sm mb-6 text-teal-100">
+              Best for growing businesses
+            </p>
+            <div class="mb-6">
+              <span class="text-5xl font-bold text-white">1.9%</span>
+              <span class="text-lg text-teal-100"> per transaction</span>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
+                ></i
+                ><span class="text-sm text-white">Up to ৳5M/month volume</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
+                ></i
+                ><span class="text-sm text-white">All payment methods</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
+                ></i
+                ><span class="text-sm text-white">Priority support</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
+                ></i
+                ><span class="text-sm text-white">Advanced analytics</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
+                ></i
+                ><span class="text-sm text-white">Webhook integration</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
+                ></i
+                ><span class="text-sm text-white">3-day settlement</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
+                ></i
+                ><span class="text-sm text-white"
+                  >Dedicated account manager</span
+                >
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 rounded-lg font-semibold transition-all bg-white text-teal-700 hover:bg-gray-100"
+            >
+              Get Started
+            </button>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="bg-gray-50 border-2 border-gray-100 rounded-2xl p-8">
+            <h3 class="text-2xl font-bold mb-2 text-gray-900">Enterprise</h3>
+            <p class="text-sm mb-6 text-gray-600">For large-scale operations</p>
+            <div class="mb-6">
+              <span class="text-5xl font-bold text-gray-900">Custom</span>
+            </div>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700">Unlimited volume</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700">All payment methods</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700">24/7 phone support</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700">Custom integration</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700">SLA guarantee</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700">Same-day settlement</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
+                ></i
+                ><span class="text-sm text-gray-700"
+                  >Volume-based discounts</span
+                >
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 rounded-lg font-semibold transition-all bg-linear-to-r from-teal-600 to-blue-700 text-white hover:shadow-lg"
+            >
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust & Security -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Enterprise Security & Compliance
+          </h2>
+          <p class="text-xl text-gray-600">
+            Your security and trust are our top priorities
+          </p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8">
+          <!-- Security 1 -->
+          <div
+            class="bg-white rounded-xl p-8 text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div class="text-5xl mb-4">🔒</div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">
+              SSL/TLS Encryption
+            </h3>
+            <p class="text-sm text-gray-600">
+              256-bit encryption for all data transmission
+            </p>
+          </div>
+          <!-- Security 2 -->
+          <div
+            class="bg-white rounded-xl p-8 text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div class="text-5xl mb-4">🛡️</div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">PCI DSS Ready</h3>
+            <p class="text-sm text-gray-600">
+              Infrastructure built for compliance requirements
+            </p>
+          </div>
+          <!-- Security 3 -->
+          <div
+            class="bg-white rounded-xl p-8 text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div class="text-5xl mb-4">🔐</div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">Secure Servers</h3>
+            <p class="text-sm text-gray-600">
+              AWS-powered infrastructure with 99.9% uptime
+            </p>
+          </div>
+          <!-- Security 4 -->
+          <div
+            class="bg-white rounded-xl p-8 text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div class="text-5xl mb-4">🚨</div>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">
+              Fraud Detection
+            </h3>
+            <p class="text-sm text-gray-600">
+              AI-powered anomaly detection and prevention
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      class="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-teal-600 to-blue-700"
+    >
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Ready to Transform Your Payment System?
+        </h2>
+        <p class="text-xl text-teal-100 mb-10">
+          Join hundreds of developers and businesses using VipAutoPay to
+          automate their payment workflows
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            class="bg-white text-teal-700 px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all shadow-xl"
+          >
+            Start Free Trial
+          </button>
+          <button
+            class="border-2 border-white text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all"
+          >
+            Schedule Demo
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      id="contact"
+      class="bg-gray-900 text-gray-300 py-16 px-4 sm:px-6 lg:px-8"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <div
+                class="w-8 h-8 bg-linear-to-br from-teal-500 to-blue-600 rounded-lg flex items-center justify-center"
+              >
+                <div class="w-5 h-5 border-2 border-white rounded"></div>
+              </div>
+              <span class="text-xl font-bold text-white">VipAutoPay</span>
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              Modern payment gateway infrastructure for Bangladesh's digital
+              economy.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Product</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >API Status</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >Changelog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Developers</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >Documentation</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >API Reference</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >SDKs</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >Code Examples</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Company</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-sm text-gray-500">
+            © 2026 VipAutoPay. All rights reserved.
+          </p>
+          <div class="flex items-center space-x-2 mt-4 md:mt-0">
+            <span class="text-sm text-gray-500">Contact:</span>
+            <a
+              href="mailto:support@vipautopay.com"
+              class="text-sm text-teal-400 hover:text-teal-300"
+            >
+              support@vipautopay.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="src/js/main.ts"></script>
+  </body>
+</html>

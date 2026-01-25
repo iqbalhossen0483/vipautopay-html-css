@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --primary-lighter: #b9f1f6;
+  --primary-light: #418f96;
+  --primary-main: #106870;
+  --primary-dark: #0e4c53;
+  --primary-darker: #08373c;
+
+  --border: rgba(145, 158, 171, 0.24);
+}
+
+@theme {
+  --color-background: var(--color-gray-200);
+  --color-card: var(--color-white);
+
+  --color-primary-lighter: var(--primary-lighter);
+  --color-primary-light: var(--primary-light);
+  --color-primary-main: var(--primary-main);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-darker: var(--primary-darker);
+
+  --color-error: var(--color-red-500);
+  --color-warning: var(--color-yellow-500);
+  --color-success: var(--color-green-500);
+  --color-info: var(--color-blue-500);
+
+  --color-border: var(--border);
+}
+
+@layer theme {
+  .dark {
+    --color-background: var(--color-gray-900);
+    --color-card: var(--color-gray-800);
+
+    --color-primary-lighter: var(--primary-lighter);
+    --color-primary-light: var(--primary-light);
+    --color-primary-main: var(--primary-main);
+    --color-primary-dark: var(--primary-dark);
+    --color-primary-darker: var(--primary-darker);
+
+    --color-error: var(--color-red-500);
+    --color-warning: var(--color-yellow-500);
+    --color-success: var(--color-green-500);
+    --color-info: var(--color-blue-500);
+
+    --color-border: var(--border);
+  }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  @apply bg-background;
+}
+
+button {
+  @apply focus:outline-none cursor-pointer disabled:cursor-not-allowed;
+}
+
+.btn-primary {
+  @apply bg-primary-main text-white px-5 py-2.5 rounded-lg font-semibold transition-all flex items-center justify-center hover:bg-primary-dark;
+}
+.display-none {
+  display: none;
+}
