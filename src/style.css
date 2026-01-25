@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --primary-lighter: #b9f1f6;
-  --primary-light: #418f96;
-  --primary-main: #106870;
-  --primary-dark: #0e4c53;
-  --primary-darker: #08373c;
+  --primary-lighter: var(--color-teal-400);
+  --primary-light: var(--color-teal-500);
+  --primary-main: var(--color-teal-600);
+  --primary-dark: var(--color-teal-700);
+  --primary-darker: var(--color-teal-800);
 
   --border: rgba(145, 158, 171, 0.24);
 }
@@ -59,10 +59,10 @@ button {
 }
 
 .btn-primary {
-  @apply bg-primary-main text-white px-5 py-2.5 rounded-lg font-semibold transition-all flex items-center justify-center hover:bg-primary-dark;
+  @apply bg-primary-main hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-primary-main/20 hover:shadow-primary-main/30 hover:-translate-y-1 flex items-center justify-center gap-2;
 }
 .btn-outline {
-  @apply border-2 border-gray-200 text-gray-700 px-5 py-2.5 rounded-lg font-semibold hover:border-gray-300 transition-all flex items-center justify-center;
+  @apply bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-semibold transition-all hover:border-slate-300 flex items-center justify-center gap-2;
 }
 
 .glass-card {
@@ -71,7 +71,11 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 .gradient-text {
-  background: linear-gradient(135deg, #0d9488 0%, #2563eb 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary-lighter) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
