@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="src/style.css" />
     <title>VipAutoPay - Automated Payment Gateway</title>
 
@@ -10,6 +11,10 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
   </head>
   <body>
@@ -93,7 +98,7 @@
           class="text-gray-600 hover:text-gray-900 text-lg font-medium mobile-link"
           >Contact</a
         >
-        <button class="btn-primary">Get API Access</button>
+        <button class="btn-primary">Get started</button>
       </div>
     </div>
 
@@ -104,14 +109,6 @@
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div
-              class="inline-flex items-center space-x-2 bg-teal-50 border border-teal-100 rounded-full px-4 py-2 mb-6"
-            >
-              <div class="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
-              <span class="text-sm font-medium text-teal-700"
-                >API-First Payment Gateway</span
-              >
-            </div>
             <h1
               class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6"
             >
@@ -123,36 +120,32 @@
               seamlessly with bKash, Nagad, Upay, and more.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-              <button
-                class="bg-linear-to-r from-teal-600 to-blue-700 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all flex items-center justify-center"
-              >
+              <button class="btn-primary">
                 Get API Access
                 <i class="fas fa-arrow-right ml-2"></i>
               </button>
-              <button
-                class="border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-gray-300 transition-all flex items-center justify-center"
-              >
+              <button class="btn-outline">
                 <i class="fas fa-code mr-2"></i>
                 View Documentation
               </button>
             </div>
             <div class="mt-8 flex items-center space-x-6 text-sm text-gray-500">
               <div class="flex items-center">
-                <i class="fas fa-check-circle text-teal-600 mr-2"></i>
+                <i class="fas fa-check-circle text-primary-main mr-2"></i>
                 99.9% Uptime SLA
               </div>
               <div class="flex items-center">
-                <i class="fas fa-check-circle text-teal-600 mr-2"></i>
+                <i class="fas fa-check-circle text-primary-main mr-2"></i>
                 256-bit Encryption
               </div>
             </div>
           </div>
           <!-- Code Preview -->
-          <div class="relative">
+          <div class="">
             <div
-              class="bg-linear-to-br from-teal-50 to-blue-50 rounded-2xl p-8 border border-gray-100"
+              class="bg-linear-to-br from-teal-50 to-blue-50 rounded-2xl md:p-8 border border-gray-100"
             >
-              <div class="bg-white rounded-xl shadow-2xl p-6">
+              <div class="bg-white rounded-xl shadow-2xl md:p-6 p-3">
                 <div class="flex items-center justify-between mb-4">
                   <span class="text-xs font-mono text-gray-400"
                     >POST /api/v1/deposit</span
@@ -195,7 +188,7 @@
       </div>
     </section>
 
-    <!-- Supported Payment Methods -->
+    <!-- Payment Methods Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12">
@@ -207,59 +200,67 @@
             services
           </p>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <!-- bKash -->
-          <div
-            class="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-teal-200 hover:shadow-lg transition-all cursor-pointer"
-          >
-            <div
-              class="w-16 h-16 bg-linear-to-br from-pink-500 to-pink-600 rounded-xl mb-4 flex items-center justify-center mx-auto"
-            >
-              <span class="text-white font-bold text-xl">b</span>
+
+        <!-- Swiper carousel -->
+        <div class="swiper mySwiper relative pb-12">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide flex justify-center">
+              <img src="/bkash.png" class="h-20" alt="bkash" />
             </div>
-            <p class="text-center font-semibold text-gray-800">bKash</p>
-          </div>
-          <!-- Nagad -->
-          <div
-            class="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-teal-200 hover:shadow-lg transition-all cursor-pointer"
-          >
-            <div
-              class="w-16 h-16 bg-linear-to-br from-orange-500 to-red-600 rounded-xl mb-4 flex items-center justify-center mx-auto"
-            >
-              <span class="text-white font-bold text-xl">N</span>
+            <div class="swiper-slide flex justify-center">
+              <img src="/nogod.png" class="h-20" alt="nogod" />
             </div>
-            <p class="text-center font-semibold text-gray-800">Nagad</p>
-          </div>
-          <!-- Upay -->
-          <div
-            class="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-teal-200 hover:shadow-lg transition-all cursor-pointer"
-          >
-            <div
-              class="w-16 h-16 bg-linear-to-br from-blue-500 to-blue-600 rounded-xl mb-4 flex items-center justify-center mx-auto"
-            >
-              <span class="text-white font-bold text-xl">U</span>
+            <div class="swiper-slide flex justify-center">
+              <img src="/roket.png" class="h-20" alt="Rocket" />
             </div>
-            <p class="text-center font-semibold text-gray-800">Upay</p>
-          </div>
-          <!-- Rocket -->
-          <div
-            class="bg-white border-2 border-gray-100 rounded-xl p-6 hover:border-teal-200 hover:shadow-lg transition-all cursor-pointer"
-          >
-            <div
-              class="w-16 h-16 bg-linear-to-br from-purple-500 to-purple-600 rounded-xl mb-4 flex items-center justify-center mx-auto"
-            >
-              <span class="text-white font-bold text-xl">R</span>
+            <div class="swiper-slide flex justify-center">
+              <img src="/upay.png" class="h-20" alt="Upay" />
             </div>
-            <p class="text-center font-semibold text-gray-800">Rocket</p>
+            <div class="swiper-slide flex justify-center">
+              <img src="/paypal.png" class="h-16 object-contain" alt="Paypal" />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="/sonali_bank.png"
+                class="h-16 object-contain"
+                alt="Sonali Bank"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img src="/city_bank.png" class="h-16" alt="City Bank" />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="/cellfin.png"
+                class="h-16 object-contain"
+                alt="Cellfin"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="/brac_bank.png"
+                class="h-16 object-contain"
+                alt="Brac Bank"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="/bank_asia.png"
+                class="h-16 object-contain"
+                alt="Bank Asia"
+              />
+            </div>
+            <div class="swiper-slide flex justify-center">
+              <img
+                src="/binance.png"
+                class="h-16 object-contain"
+                alt="Binance"
+              />
+            </div>
           </div>
-        </div>
-        <div class="text-center mt-8">
-          <span
-            class="inline-flex items-center text-sm text-gray-500 bg-gray-50 px-4 py-2 rounded-full"
-          >
-            <div class="w-2 h-2 bg-teal-500 rounded-full mr-2"></div>
-            More payment methods coming soon
-          </span>
+
+          <!-- Pagination (dots) -->
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
@@ -549,7 +550,7 @@
               <i class="fas fa-arrow-right ml-2"></i>
             </button>
           </div>
-          <div>
+          <!-- <div>
             <div
               class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl"
             >
@@ -592,7 +593,7 @@ console.log(response.data);
                 >
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -1003,5 +1004,50 @@ console.log(response.data);
     </footer>
 
     <script src="src/js/main.ts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        loop: true, // infinite loop
+        slidesPerView: 5, // show 1 slide at a time
+        spaceBetween: 20, // gap between slides
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        cssMode: false,
+        on: {
+          init: function () {
+            this.pagination.el.style.position = "relative";
+            this.pagination.el.style.marginTop = "40px";
+          },
+        },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          // When window width is >= 320px
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          // When window width is >= 768px
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          // When window width is >= 1024px
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+        },
+      });
+    </script>
   </body>
 </html>
