@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="/src/style.css" />
     <title>VipAutoPay - Automated Payment Gateway</title>
 
     <!-- FontAwesome for Icons -->
@@ -16,39 +16,52 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body
+    class="bg-slate-50 text-slate-900 antialiased selection:bg-teal-100 selection:text-teal-900"
+  >
     <!-- Navigation -->
     <nav
-      class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 z-50"
+      class="fixed top-0 w-full bg-white/80 backdrop-blur-lg border-b border-slate-200/60 z-50 transition-all duration-300"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex items-center space-x-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex items-center space-x-12">
             <!-- Logo -->
-            <a href="#">
-              <img src="/logo.png" alt="VipAutoPay Logo" class="h-14" />
+            <a href="#" class="flex items-center gap-2 group">
+              <img
+                src="/logo.png"
+                alt="VipAutoPay Logo"
+                class="h-14 w-auto transition-transform group-hover:scale-105"
+              />
             </a>
             <!-- Desktop Links -->
-            <div class="hidden md:flex space-x-6">
+            <div class="hidden md:flex space-x-8">
               <a
                 href="#features"
-                class="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                class="text-slate-600 hover:text-teal-600 text-sm font-medium transition-colors"
                 >Features</a
               >
               <a
                 href="#pricing"
-                class="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                class="text-slate-600 hover:text-teal-600 text-sm font-medium transition-colors"
                 >Pricing</a
               >
               <a
                 href="#docs"
-                class="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                class="text-slate-600 hover:text-teal-600 text-sm font-medium transition-colors"
                 >Documentation</a
               >
               <a
                 href="#contact"
-                class="text-gray-600 hover:text-gray-900 text-sm font-medium"
+                class="text-slate-600 hover:text-teal-600 text-sm font-medium transition-colors"
                 >Contact</a
               >
             </div>
@@ -56,14 +69,21 @@
           <!-- Desktop Buttons -->
           <div class="hidden md:flex items-center space-x-4">
             <button
-              class="text-gray-600 hover:text-gray-900 text-sm font-medium"
+              class="text-slate-600 hover:text-slate-900 text-sm font-medium px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors"
             >
               Sign In
             </button>
-            <button class="btn-primary">Get started</button>
+            <button
+              class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all shadow-lg shadow-slate-900/20 hover:shadow-slate-900/30 hover:-translate-y-0.5"
+            >
+              Get started
+            </button>
           </div>
           <!-- Mobile Menu Button -->
-          <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden text-slate-600 p-2 rounded-lg hover:bg-slate-100"
+          >
             <span id="menu-icon"
               ><i class="fas fa-bars w-6 h-6 text-xl"></i
             ></span>
@@ -76,76 +96,143 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 pt-16">
-      <div class="flex flex-col p-4 space-y-4">
+    <div
+      id="mobile-menu"
+      class="hidden fixed inset-0 bg-white/95 backdrop-blur-xl z-40 pt-24 px-6 transition-all duration-300"
+    >
+      <div class="flex flex-col space-y-6 text-center">
         <a
           href="#features"
-          class="text-gray-600 hover:text-gray-900 text-lg font-medium mobile-link"
+          class="text-slate-800 hover:text-teal-600 text-2xl font-semibold mobile-link"
           >Features</a
         >
         <a
           href="#pricing"
-          class="text-gray-600 hover:text-gray-900 text-lg font-medium mobile-link"
+          class="text-slate-800 hover:text-teal-600 text-2xl font-semibold mobile-link"
           >Pricing</a
         >
         <a
           href="#docs"
-          class="text-gray-600 hover:text-gray-900 text-lg font-medium mobile-link"
+          class="text-slate-800 hover:text-teal-600 text-2xl font-semibold mobile-link"
           >Documentation</a
         >
         <a
           href="#contact"
-          class="text-gray-600 hover:text-gray-900 text-lg font-medium mobile-link"
+          class="text-slate-800 hover:text-teal-600 text-2xl font-semibold mobile-link"
           >Contact</a
         >
-        <button class="btn-primary">Get started</button>
+        <hr class="border-slate-100" />
+        <button
+          class="w-full bg-slate-900 text-white py-4 rounded-xl text-lg font-medium shadow-xl"
+        >
+          Get started
+        </button>
+        <button class="w-full text-slate-600 py-4 text-lg font-medium">
+          Sign In
+        </button>
       </div>
     </div>
 
     <!-- Hero Section -->
     <section
-      class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-gray-50 to-white"
+      class="pt-40 pb-24 px-4 sm:px-6 lg:px-8 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-teal-50 via-white to-blue-50 overflow-hidden"
     >
-      <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
+      <div class="max-w-7xl mx-auto relative">
+        <!-- Background decoration -->
+        <div
+          class="absolute -top-20 -right-20 w-96 h-96 bg-teal-200/20 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute top-40 -left-20 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl"
+        ></div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+          <div class="max-w-2xl">
             <h1
-              class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6"
+              class="text-5xl lg:text-7xl font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight"
             >
-              Automated Online Payments for Your Application
+              Payments made <br />
+              <span class="gradient-text">effortless.</span>
             </h1>
-            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-lg">
               Integrate Bangladesh's leading mobile financial services into your
-              app with our secure REST API. Handle deposits and withdrawals
-              seamlessly with bKash, Nagad, Upay, and more.
+              app with our secure, developer-friendly REST API.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-              <button class="btn-primary">
+              <button
+                class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-teal-600/20 hover:shadow-teal-600/30 hover:-translate-y-1 flex items-center justify-center gap-2"
+              >
                 Get API Access
-                <i class="fas fa-arrow-right ml-2"></i>
+                <i class="fas fa-arrow-right text-sm"></i>
               </button>
-              <button class="btn-outline">
-                <i class="fas fa-code mr-2"></i>
-                View Documentation
+              <button
+                class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-xl font-semibold transition-all hover:border-slate-300 flex items-center justify-center gap-2"
+              >
+                <i class="fas fa-book text-slate-400"></i>
+                Documentation
               </button>
             </div>
-            <div class="mt-8 flex items-center space-x-6 text-sm text-gray-500">
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-primary-main mr-2"></i>
-                99.9% Uptime SLA
+            <div
+              class="mt-10 flex items-center gap-8 text-sm font-medium text-slate-500"
+            >
+              <div class="flex items-center gap-2">
+                <i class="fas fa-check-circle text-teal-500"></i>
+                99.9% Uptime
               </div>
-              <div class="flex items-center">
-                <i class="fas fa-check-circle text-primary-main mr-2"></i>
-                256-bit Encryption
+              <div class="flex items-center gap-2">
+                <i class="fas fa-check-circle text-teal-500"></i>
+                PCI DSS Ready
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fas fa-check-circle text-teal-500"></i>
+                24/7 Support
               </div>
             </div>
           </div>
           <!-- Code Preview -->
-          <div class="">
+          <!-- <div class="relative group perspective-1000">
             <div
-              class="bg-linear-to-br from-teal-50 to-blue-50 rounded-2xl md:p-8 border border-gray-100"
+              class="absolute -inset-1 bg-linear-to-r from-teal-500 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative bg-white rounded-2xl shadow-2xl border border-slate-800 overflow-hidden transform transition-transform duration-500 hover:rotate-1"
             >
-              <div class="bg-white rounded-xl shadow-2xl md:p-6 p-3">
+              <div
+                class="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-900/50 backdrop-blur"
+              >
+                <div class="flex space-x-2">
+                  <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <span class="text-xs font-mono text-slate-500"
+                  >POST /api/v1/deposit</span
+                >
+              </div>
+              <div class="p-6 md:p-8 overflow-x-auto">
+                <pre class="font-mono text-sm leading-relaxed">
+                  <span class="text-purple-400">const</span> <span class="text-blue-400">payment</span> <span class="text-slate-400">=</span> <span class="text-purple-400">await</span> <span class="text-yellow-200">client</span>.<span class="text-blue-400">deposit</span>({
+                    <span class="text-slate-300">amount</span>: <span class="text-orange-400">1000</span>,
+                    <span class="text-slate-300">currency</span>: <span class="text-green-400">'BDT'</span>,
+                    <span class="text-slate-300">method</span>: <span class="text-green-400">'bkash'</span>,
+                    <span class="text-slate-300">customer</span>: {
+                      <span class="text-slate-300">phone</span>: <span class="text-green-400">'01712345678'</span>,
+                      <span class="text-slate-300">name</span>: <span class="text-green-400">'John Doe'</span>
+                    },
+                    <span class="text-slate-300">callback_url</span>: <span class="text-green-400">'https://app.com/hook'</span>
+                  });
+
+                  <span class="text-slate-500">// Response</span>
+                  <span class="text-slate-400">{</span>
+                    <span class="text-green-400">"status"</span>: <span class="text-green-400">"success"</span>,
+                    <span class="text-green-400">"txn_id"</span>: <span class="text-green-400">"TXN_8X92M"</span>,
+                    <span class="text-green-400">"url"</span>: <span class="text-green-400">"https://pay.vip/..."</span>
+                  <span class="text-slate-400">}</span></pre>
+              </div>
+            </div>
+          </div> -->
+        
+        <div class="bg-white rounded-xl shadow-2xl md:p-6 p-3">
                 <div class="flex items-center justify-between mb-4">
                   <span class="text-xs font-mono text-gray-400"
                     >POST /api/v1/deposit</span
@@ -182,183 +269,166 @@
                   >
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- Payment Methods Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">
-            Supported Payment Methods
-          </h2>
-          <p class="text-gray-600">
-            Accept payments through Bangladesh's most popular mobile financial
-            services
-          </p>
-        </div>
+    <section class="py-20 bg-white border-y border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p
+          class="text-center text-slate-500 font-medium mb-12 uppercase tracking-widest text-sm"
+        >
+          Trusted by leading payment providers
+        </p>
 
         <!-- Swiper carousel -->
-        <div class="swiper mySwiper relative pb-12">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide flex justify-center">
-              <img src="/bkash.png" class="h-20" alt="bkash" />
+        <div class="swiper mySwiper relative px-4">
+          <div class="swiper-wrapper items-center">
+            <div
+              class="swiper-slide flex justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100"
+            >
+              <img src="/bkash.png" class="h-16 object-contain" alt="bkash" />
             </div>
-            <div class="swiper-slide flex justify-center">
-              <img src="/nogod.png" class="h-20" alt="nogod" />
+            <div
+              class="swiper-slide flex justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100"
+            >
+              <img src="/nogod.png" class="h-12 object-contain" alt="nagad" />
             </div>
-            <div class="swiper-slide flex justify-center">
-              <img src="/roket.png" class="h-20" alt="Rocket" />
+            <div
+              class="swiper-slide flex justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100"
+            >
+              <img src="/roket.png" class="h-14 object-contain" alt="Rocket" />
             </div>
-            <div class="swiper-slide flex justify-center">
-              <img src="/upay.png" class="h-20" alt="Upay" />
+            <div
+              class="swiper-slide flex justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100"
+            >
+              <img src="/upay.png" class="h-12 object-contain" alt="Upay" />
             </div>
-            <div class="swiper-slide flex justify-center">
-              <img src="/paypal.png" class="h-16 object-contain" alt="Paypal" />
+            <div
+              class="swiper-slide flex justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100"
+            >
+              <img src="/paypal.png" class="h-10 object-contain" alt="Paypal" />
             </div>
-            <div class="swiper-slide flex justify-center">
+            <div
+              class="swiper-slide flex justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100"
+            >
+              <img
+                src="/city_bank.png"
+                class="h-12 object-contain"
+                alt="City Bank"
+              />
+            </div>
+            <div
+              class="swiper-slide flex justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100"
+            >
               <img
                 src="/sonali_bank.png"
-                class="h-16 object-contain"
+                class="h-12 object-contain"
                 alt="Sonali Bank"
               />
             </div>
-            <div class="swiper-slide flex justify-center">
-              <img src="/city_bank.png" class="h-16" alt="City Bank" />
-            </div>
-            <div class="swiper-slide flex justify-center">
+            <div
+              class="swiper-slide flex justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100"
+            >
               <img
                 src="/cellfin.png"
-                class="h-16 object-contain"
+                class="h-10 object-contain"
                 alt="Cellfin"
               />
             </div>
-            <div class="swiper-slide flex justify-center">
+            <div
+              class="swiper-slide flex justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100"
+            >
               <img
                 src="/brac_bank.png"
-                class="h-16 object-contain"
+                class="h-12 object-contain"
                 alt="Brac Bank"
               />
             </div>
-            <div class="swiper-slide flex justify-center">
-              <img
-                src="/bank_asia.png"
-                class="h-16 object-contain"
-                alt="Bank Asia"
-              />
-            </div>
-            <div class="swiper-slide flex justify-center">
-              <img
-                src="/binance.png"
-                class="h-16 object-contain"
-                alt="Binance"
-              />
-            </div>
           </div>
-
-          <!-- Pagination (dots) -->
-          <div class="swiper-pagination"></div>
+          <div class="swiper-pagination !bottom-0"></div>
         </div>
       </div>
     </section>
 
     <!-- How It Works -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
       <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">
-            How VipAutoPay Works
+        <div class="text-center mb-20">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Integration in minutes, not days
           </h2>
-          <p class="text-xl text-gray-600">
-            Get started in minutes with our developer-friendly integration
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            We've abstracted the complexity so you can focus on building your
+            product.
           </p>
         </div>
-        <div class="grid md:grid-cols-5 gap-8">
-          <!-- Step 1 -->
-          <div class="relative group">
+
+        <div class="relative">
+          <!-- Connecting Line (Desktop) -->
+          <div
+            class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2 z-0"
+          ></div>
+
+          <div class="grid md:grid-cols-4 gap-8 relative z-10">
+            <!-- Step 1 -->
             <div
-              class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all h-full border border-gray-100"
+              class="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div class="text-4xl mb-4">👤</div>
-              <div class="text-sm font-bold text-teal-600 mb-2">STEP 01</div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">
+              <div
+                class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 font-bold text-xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors"
+              >
+                1
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
                 Create Account
               </h3>
-              <p class="text-sm text-gray-600">
-                Sign up and verify your business details in minutes
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Sign up and verify your business details instantly.
               </p>
             </div>
+            <!-- Step 2 -->
             <div
-              class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-linear-to-r from-teal-200 to-blue-200"
-            ></div>
-          </div>
-          <!-- Step 2 -->
-          <div class="relative group">
-            <div
-              class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all h-full border border-gray-100"
+              class="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div class="text-4xl mb-4">🔑</div>
-              <div class="text-sm font-bold text-teal-600 mb-2">STEP 02</div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">Get API Keys</h3>
-              <p class="text-sm text-gray-600">
-                Receive your secure API credentials instantly
-              </p>
-            </div>
-            <div
-              class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-linear-to-r from-teal-200 to-blue-200"
-            ></div>
-          </div>
-          <!-- Step 3 -->
-          <div class="relative group">
-            <div
-              class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all h-full border border-gray-100"
-            >
-              <div class="text-4xl mb-4">⚡</div>
-              <div class="text-sm font-bold text-teal-600 mb-2">STEP 03</div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">
-                Integrate API
+              <div
+                class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 font-bold text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors"
+              >
+                2
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">
+                Get API Keys
               </h3>
-              <p class="text-sm text-gray-600">
-                Add our REST API to your application with simple code
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Generate secure credentials from your dashboard.
               </p>
             </div>
+            <!-- Step 3 -->
             <div
-              class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-linear-to-r from-teal-200 to-blue-200"
-            ></div>
-          </div>
-          <!-- Step 4 -->
-          <div class="relative group">
-            <div
-              class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all h-full border border-gray-100"
+              class="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div class="text-4xl mb-4">💳</div>
-              <div class="text-sm font-bold text-teal-600 mb-2">STEP 04</div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">
-                Accept Payments
-              </h3>
-              <p class="text-sm text-gray-600">
-                Start processing deposits and withdrawals automatically
+              <div
+                class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 font-bold text-xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors"
+              >
+                3
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Connect SDK</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Install our package and initialize with one line of code.
               </p>
             </div>
+            <!-- Step 4 -->
             <div
-              class="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-linear-to-r from-teal-200 to-blue-200"
-            ></div>
-          </div>
-          <!-- Step 5 -->
-          <div class="relative group">
-            <div
-              class="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all h-full border border-gray-100"
+              class="group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div class="text-4xl mb-4">📊</div>
-              <div class="text-sm font-bold text-teal-600 mb-2">STEP 05</div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">
-                Monitor & Scale
-              </h3>
-              <p class="text-sm text-gray-600">
-                Track transactions in real-time via dashboard
+              <div
+                class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center text-green-600 font-bold text-xl mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors"
+              >
+                4
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">Go Live</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Start accepting real payments from your customers.
               </p>
             </div>
           </div>
@@ -367,112 +437,118 @@
     </section>
 
     <!-- Key Features -->
-    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="features" class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">
-            Enterprise-Grade Features
+        <div class="text-center mb-20">
+          <span
+            class="text-teal-600 font-semibold tracking-wider uppercase text-sm"
+            >Why VipAutoPay?</span
+          >
+          <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mt-3 mb-6">
+            Enterprise-grade infrastructure
           </h2>
-          <p class="text-xl text-gray-600">
-            Everything you need to handle payments at scale
+          <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+            Built for scale, reliability, and security from day one.
           </p>
         </div>
+
         <div class="grid md:grid-cols-3 gap-8">
-          <!-- Feature 1 -->
+          <!-- Feature Cards -->
           <div
-            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+            class="p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 hover:shadow-xl transition-all duration-300 group"
           >
             <div
-              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+              class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-teal-600 mb-6 group-hover:scale-110 transition-transform"
             >
               <i class="fas fa-shield-alt text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">
-              Secure API Authentication
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Bank-Grade Security
             </h3>
-            <p class="text-gray-600 leading-relaxed">
-              Industry-standard OAuth 2.0 and API key authentication with IP
-              whitelisting
+            <p class="text-slate-600 leading-relaxed">
+              ISO 27001 certified infrastructure with end-to-end encryption and
+              fraud detection.
             </p>
           </div>
-          <!-- Feature 2 -->
+
           <div
-            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+            class="p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 hover:shadow-xl transition-all duration-300 group"
           >
             <div
-              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+              class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform"
             >
               <i class="fas fa-bolt text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">
-              Real-Time Processing
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Instant Settlement
             </h3>
-            <p class="text-gray-600 leading-relaxed">
-              Instant transaction verification with sub-second response times
+            <p class="text-slate-600 leading-relaxed">
+              Access your funds immediately with our real-time settlement
+              network.
             </p>
           </div>
-          <!-- Feature 3 -->
+
           <div
-            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+            class="p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 hover:shadow-xl transition-all duration-300 group"
           >
             <div
-              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+              class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-600 mb-6 group-hover:scale-110 transition-transform"
             >
-              <i class="fas fa-bell text-2xl"></i>
+              <i class="fas fa-code-branch text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">
-              Webhooks & Callbacks
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Robust Webhooks
             </h3>
-            <p class="text-gray-600 leading-relaxed">
-              Get notified instantly about payment status changes via webhooks
+            <p class="text-slate-600 leading-relaxed">
+              Reliable event notifications for every transaction state change.
             </p>
           </div>
-          <!-- Feature 4 -->
+
           <div
-            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+            class="p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 hover:shadow-xl transition-all duration-300 group"
           >
             <div
-              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+              class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform"
             >
-              <i class="fas fa-chart-bar text-2xl"></i>
+              <i class="fas fa-chart-pie text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">
-              Auto Payout System
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Deep Analytics
             </h3>
-            <p class="text-gray-600 leading-relaxed">
-              Automated withdrawal processing with configurable rules and limits
+            <p class="text-slate-600 leading-relaxed">
+              Visualize your cash flow with detailed reports and insights
+              dashboard.
             </p>
           </div>
-          <!-- Feature 5 -->
+
           <div
-            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+            class="p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 hover:shadow-xl transition-all duration-300 group"
           >
             <div
-              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+              class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-orange-600 mb-6 group-hover:scale-110 transition-transform"
             >
-              <i class="fas fa-code text-2xl"></i>
+              <i class="fas fa-globe text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">
-              Transaction Logs
-            </h3>
-            <p class="text-gray-600 leading-relaxed">
-              Complete audit trail with detailed transaction history and reports
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Global Reach</h3>
+            <p class="text-slate-600 leading-relaxed">
+              Accept payments from anywhere, optimized for local Bangladesh
+              methods.
             </p>
           </div>
-          <!-- Feature 6 -->
+
           <div
-            class="bg-linear-to-br from-gray-50 to-white border border-gray-100 rounded-xl p-8 hover:shadow-xl transition-all"
+            class="p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-slate-200 hover:shadow-xl transition-all duration-300 group"
           >
             <div
-              class="w-14 h-14 bg-linear-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center text-white mb-6"
+              class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-red-600 mb-6 group-hover:scale-110 transition-transform"
             >
-              <i class="fas fa-lock text-2xl"></i>
+              <i class="fas fa-headset text-2xl"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3">
-              Fraud Prevention
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Dedicated Support
             </h3>
-            <p class="text-gray-600 leading-relaxed">
-              Advanced rate limiting, velocity checks, and anomaly detection
+            <p class="text-slate-600 leading-relaxed">
+              Direct access to our engineering team for integration assistance.
             </p>
           </div>
         </div>
@@ -482,316 +558,204 @@
     <!-- Developer Section -->
     <section
       id="docs"
-      class="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-gray-900 to-gray-800 text-white"
+      class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white overflow-hidden relative"
     >
-      <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Background glow -->
+      <div
+        class="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-900/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"
+      ></div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <div
-              class="inline-flex items-center space-x-2 bg-teal-500/20 border border-teal-500/30 rounded-full px-4 py-2 mb-6"
+              class="inline-flex items-center space-x-2 bg-teal-900/30 border border-teal-500/30 rounded-full px-4 py-1.5 mb-8"
             >
-              <i class="fas fa-code w-4 h-4 text-teal-400"></i>
+              <i class="fas fa-terminal text-teal-400 text-xs"></i>
               <span class="text-sm font-medium text-teal-300"
-                >Built for Developers</span
+                >Developer First</span
               >
             </div>
-            <h2 class="text-4xl font-bold mb-6">API-First Architecture</h2>
-            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-              Simple, predictable REST API designed for modern applications.
-              Complete with comprehensive documentation, code samples, and SDKs
-              for popular frameworks.
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Designed for your <br /><span class="text-teal-400"
+                >tech stack</span
+              >
+            </h2>
+            <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+              Our libraries are available in every popular language. Whether you
+              use Node, Python, PHP, or Go, we have you covered.
             </p>
-            <ul class="space-y-4 mb-8">
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-6 h-6 text-teal-400 mr-3 mt-1"
-                ></i>
-                <span class="text-gray-300"
-                  >RESTful API with JSON request/response</span
-                >
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-6 h-6 text-teal-400 mr-3 mt-1"
-                ></i>
-                <span class="text-gray-300"
-                  >Postman collection & OpenAPI specs</span
-                >
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-6 h-6 text-teal-400 mr-3 mt-1"
-                ></i>
-                <span class="text-gray-300"
-                  >Test mode with sandbox environment</span
-                >
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-6 h-6 text-teal-400 mr-3 mt-1"
-                ></i>
-                <span class="text-gray-300"
-                  >Multiple language SDKs available</span
-                >
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-6 h-6 text-teal-400 mr-3 mt-1"
-                ></i>
-                <span class="text-gray-300"
-                  >Detailed error codes and handling</span
-                >
-              </li>
-            </ul>
+
+            <div class="grid grid-cols-2 gap-4 mb-10">
+              <div class="flex items-center space-x-3 text-slate-300">
+                <i class="fab fa-js text-yellow-400 text-xl"></i>
+                <span>Node.js SDK</span>
+              </div>
+              <div class="flex items-center space-x-3 text-slate-300">
+                <i class="fab fa-python text-blue-400 text-xl"></i>
+                <span>Python SDK</span>
+              </div>
+              <div class="flex items-center space-x-3 text-slate-300">
+                <i class="fab fa-php text-purple-400 text-xl"></i>
+                <span>PHP SDK</span>
+              </div>
+              <div class="flex items-center space-x-3 text-slate-300">
+                <i class="fab fa-java text-red-400 text-xl"></i>
+                <span>Java SDK</span>
+              </div>
+            </div>
+
             <button
-              class="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold transition-all flex items-center"
+              class="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-xl font-semibold transition-all flex items-center gap-2 group"
             >
-              Explore Documentation
-              <i class="fas fa-arrow-right ml-2"></i>
+              Read the Docs
+              <i
+                class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"
+              ></i>
             </button>
           </div>
-          <!-- <div>
+
+          <div class="relative">
             <div
-              class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden shadow-2xl"
+              class="absolute -inset-0.5 bg-gradient-to-r from-teal-500 to-blue-500 rounded-2xl blur opacity-30"
+            ></div>
+            <div
+              class="bg-slate-950 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden relative"
             >
               <div
-                class="bg-gray-700/50 px-4 py-3 flex items-center justify-between border-b border-gray-600"
+                class="flex items-center justify-between px-4 py-3 bg-slate-900 border-b border-slate-800"
               >
-                <span class="text-xs font-mono text-gray-300">request.js</span>
                 <div class="flex space-x-2">
-                  <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-slate-700"></div>
+                  <div class="w-3 h-3 rounded-full bg-slate-700"></div>
+                </div>
+                <div class="text-xs text-slate-500 font-mono">install.sh</div>
+              </div>
+              <div class="p-6 font-mono text-sm text-slate-300">
+                <div class="mb-4">
+                  <span class="text-teal-500">$</span> npm install
+                  @vipautopay/sdk
+                </div>
+                <div class="mb-4">
+                  <span class="text-slate-500"># Or using yarn</span><br />
+                  <span class="text-teal-500">$</span> yarn add @vipautopay/sdk
+                </div>
+                <div>
+                  <span class="text-slate-500"># Or using composer</span><br />
+                  <span class="text-teal-500">$</span> composer require
+                  vipautopay/sdk
                 </div>
               </div>
-              <div class="p-6 font-mono text-sm overflow-x-auto">
-                <pre class="text-gray-300">
-const axios = require('axios');
-
-const response = await axios.post(
-  'https://api.vipautopay.com/v1/deposit',
-  {
-    amount: 1000,
-    method: 'bkash',
-    customer_phone: '01712345678',
-    callback_url: 'https://yourapp.com/callback'
-  },
-  {
-    headers: {
-      'Authorization': 'Bearer YOUR_API_KEY',
-      'Content-Type': 'application/json'
-    }
-  }
-);
-
-console.log(response.data);
-// {
-//   "status": "success",
-//   "transaction_id": "TXN123456789",
-//   "payment_url": "https://..."
-// }</pre
-                >
-              </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="pricing" class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">
-            Simple, Transparent Pricing
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-bold text-slate-900 mb-4">
+            Transparent Pricing
           </h2>
-          <p class="text-xl text-gray-600">
-            Choose the plan that fits your business needs
-          </p>
+          <p class="text-xl text-slate-600">No hidden fees. Pay as you grow.</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <!-- Starter Plan -->
-          <div class="bg-gray-50 border-2 border-gray-100 rounded-2xl p-8">
-            <h3 class="text-2xl font-bold mb-2 text-gray-900">Starter</h3>
-            <p class="text-sm mb-6 text-gray-600">
-              Perfect for small businesses and startups
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+          <!-- Starter -->
+          <div
+            class="bg-white border border-slate-200 rounded-2xl p-8 hover:border-teal-200 transition-colors"
+          >
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Starter</h3>
+            <p class="text-sm text-slate-500 mb-6">
+              For side projects & startups
             </p>
-            <div class="mb-6">
-              <span class="text-5xl font-bold text-gray-900">2.5%</span>
-              <span class="text-lg text-gray-600"> per transaction</span>
+            <div class="flex items-baseline mb-8">
+              <span class="text-4xl font-bold text-slate-900">2.5%</span>
+              <span class="text-slate-500 ml-2">per transaction</span>
             </div>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700"
-                  >Up to ৳500K/month volume</span
-                >
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center text-slate-600 text-sm">
+                <i class="fas fa-check text-teal-500 mr-3"></i> Up to ৳500K/mo
+                volume
               </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700">All payment methods</span>
+              <li class="flex items-center text-slate-600 text-sm">
+                <i class="fas fa-check text-teal-500 mr-3"></i> Standard Support
               </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700">Email support</span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700">Basic dashboard</span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700">API documentation</span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700">7-day settlement</span>
+              <li class="flex items-center text-slate-600 text-sm">
+                <i class="fas fa-check text-teal-500 mr-3"></i> All Payment
+                Methods
               </li>
             </ul>
             <button
-              class="w-full py-4 rounded-lg font-semibold transition-all bg-linear-to-r from-teal-600 to-blue-700 text-white hover:shadow-lg"
+              class="w-full py-3 rounded-xl border border-slate-200 text-slate-700 font-semibold hover:bg-slate-50 transition-colors"
             >
-              Get Started
+              Start Free
             </button>
           </div>
 
-          <!-- Business Plan (Popular) -->
+          <!-- Business -->
           <div
-            class="bg-linear-to-br from-teal-600 to-blue-700 text-white shadow-2xl scale-105 transform rounded-2xl p-8 relative z-10"
+            class="bg-slate-900 text-white rounded-2xl p-8 shadow-2xl relative transform md:-translate-y-4 border border-slate-800"
           >
             <div
-              class="bg-white/20 text-white text-xs font-bold uppercase px-3 py-1 rounded-full inline-block mb-4"
+              class="absolute top-0 right-0 bg-gradient-to-r from-teal-500 to-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl"
             >
-              Most Popular
+              POPULAR
             </div>
-            <h3 class="text-2xl font-bold mb-2 text-white">Business</h3>
-            <p class="text-sm mb-6 text-teal-100">
-              Best for growing businesses
-            </p>
-            <div class="mb-6">
+            <h3 class="text-xl font-bold mb-2">Business</h3>
+            <p class="text-sm text-slate-400 mb-6">For growing companies</p>
+            <div class="flex items-baseline mb-8">
               <span class="text-5xl font-bold text-white">1.9%</span>
-              <span class="text-lg text-teal-100"> per transaction</span>
+              <span class="text-slate-400 ml-2">per transaction</span>
             </div>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
-                ></i
-                ><span class="text-sm text-white">Up to ৳5M/month volume</span>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center text-slate-300 text-sm">
+                <i class="fas fa-check text-teal-400 mr-3"></i> Up to ৳5M/mo
+                volume
               </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
-                ></i
-                ><span class="text-sm text-white">All payment methods</span>
+              <li class="flex items-center text-slate-300 text-sm">
+                <i class="fas fa-check text-teal-400 mr-3"></i> Priority Support
               </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
-                ></i
-                ><span class="text-sm text-white">Priority support</span>
+              <li class="flex items-center text-slate-300 text-sm">
+                <i class="fas fa-check text-teal-400 mr-3"></i> Advanced
+                Analytics
               </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
-                ></i
-                ><span class="text-sm text-white">Advanced analytics</span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
-                ></i
-                ><span class="text-sm text-white">Webhook integration</span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
-                ></i
-                ><span class="text-sm text-white">3-day settlement</span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-200"
-                ></i
-                ><span class="text-sm text-white"
-                  >Dedicated account manager</span
-                >
+              <li class="flex items-center text-slate-300 text-sm">
+                <i class="fas fa-check text-teal-400 mr-3"></i> Fraud Protection
               </li>
             </ul>
             <button
-              class="w-full py-4 rounded-lg font-semibold transition-all bg-white text-teal-700 hover:bg-gray-100"
+              class="w-full py-4 rounded-xl bg-gradient-to-r from-teal-500 to-blue-600 text-white font-bold shadow-lg hover:shadow-teal-500/25 transition-all hover:scale-[1.02]"
             >
               Get Started
             </button>
           </div>
 
-          <!-- Enterprise Plan -->
-          <div class="bg-gray-50 border-2 border-gray-100 rounded-2xl p-8">
-            <h3 class="text-2xl font-bold mb-2 text-gray-900">Enterprise</h3>
-            <p class="text-sm mb-6 text-gray-600">For large-scale operations</p>
-            <div class="mb-6">
-              <span class="text-5xl font-bold text-gray-900">Custom</span>
+          <!-- Enterprise -->
+          <div
+            class="bg-white border border-slate-200 rounded-2xl p-8 hover:border-teal-200 transition-colors"
+          >
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Enterprise</h3>
+            <p class="text-sm text-slate-500 mb-6">For large scale needs</p>
+            <div class="flex items-baseline mb-8">
+              <span class="text-4xl font-bold text-slate-900">Custom</span>
             </div>
-            <ul class="space-y-3 mb-8">
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700">Unlimited volume</span>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center text-slate-600 text-sm">
+                <i class="fas fa-check text-teal-500 mr-3"></i> Unlimited volume
               </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700">All payment methods</span>
+              <li class="flex items-center text-slate-600 text-sm">
+                <i class="fas fa-check text-teal-500 mr-3"></i> Dedicated
+                Account Manager
               </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700">24/7 phone support</span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700">Custom integration</span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700">SLA guarantee</span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700">Same-day settlement</span>
-              </li>
-              <li class="flex items-start">
-                <i
-                  class="fas fa-check-circle w-5 h-5 mr-3 mt-1 text-teal-600"
-                ></i
-                ><span class="text-sm text-gray-700"
-                  >Volume-based discounts</span
-                >
+              <li class="flex items-center text-slate-600 text-sm">
+                <i class="fas fa-check text-teal-500 mr-3"></i> Custom SLA
               </li>
             </ul>
             <button
-              class="w-full py-4 rounded-lg font-semibold transition-all bg-linear-to-r from-teal-600 to-blue-700 text-white hover:shadow-lg"
+              class="w-full py-3 rounded-xl border border-slate-200 text-slate-700 font-semibold hover:bg-slate-50 transition-colors"
             >
               Contact Sales
             </button>
@@ -800,88 +764,37 @@ console.log(response.data);
       </div>
     </section>
 
-    <!-- Trust & Security -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">
-            Enterprise Security & Compliance
-          </h2>
-          <p class="text-xl text-gray-600">
-            Your security and trust are our top priorities
-          </p>
-        </div>
-        <div class="grid md:grid-cols-4 gap-8">
-          <!-- Security 1 -->
-          <div
-            class="bg-white rounded-xl p-8 text-center border border-gray-100 hover:shadow-lg transition-all"
-          >
-            <div class="text-5xl mb-4">🔒</div>
-            <h3 class="text-lg font-bold text-gray-900 mb-3">
-              SSL/TLS Encryption
-            </h3>
-            <p class="text-sm text-gray-600">
-              256-bit encryption for all data transmission
-            </p>
-          </div>
-          <!-- Security 2 -->
-          <div
-            class="bg-white rounded-xl p-8 text-center border border-gray-100 hover:shadow-lg transition-all"
-          >
-            <div class="text-5xl mb-4">🛡️</div>
-            <h3 class="text-lg font-bold text-gray-900 mb-3">PCI DSS Ready</h3>
-            <p class="text-sm text-gray-600">
-              Infrastructure built for compliance requirements
-            </p>
-          </div>
-          <!-- Security 3 -->
-          <div
-            class="bg-white rounded-xl p-8 text-center border border-gray-100 hover:shadow-lg transition-all"
-          >
-            <div class="text-5xl mb-4">🔐</div>
-            <h3 class="text-lg font-bold text-gray-900 mb-3">Secure Servers</h3>
-            <p class="text-sm text-gray-600">
-              AWS-powered infrastructure with 99.9% uptime
-            </p>
-          </div>
-          <!-- Security 4 -->
-          <div
-            class="bg-white rounded-xl p-8 text-center border border-gray-100 hover:shadow-lg transition-all"
-          >
-            <div class="text-5xl mb-4">🚨</div>
-            <h3 class="text-lg font-bold text-gray-900 mb-3">
-              Fraud Detection
-            </h3>
-            <p class="text-sm text-gray-600">
-              AI-powered anomaly detection and prevention
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA Section -->
     <section
-      class="py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-teal-600 to-blue-700"
+      class="py-24 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
     >
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-          Ready to Transform Your Payment System?
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-teal-600 to-blue-700 opacity-95"
+      ></div>
+      <div
+        class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"
+      ></div>
+
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <h2
+          class="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight"
+        >
+          Ready to modernize your payments?
         </h2>
-        <p class="text-xl text-teal-100 mb-10">
-          Join hundreds of developers and businesses using VipAutoPay to
-          automate their payment workflows
+        <p class="text-xl text-teal-50 mb-12 max-w-2xl mx-auto">
+          Join 500+ businesses that trust VipAutoPay for their mission-critical
+          payment infrastructure.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <button
-            class="bg-white text-teal-700 px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all shadow-xl"
+            class="bg-white text-teal-700 px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-xl hover:-translate-y-1"
           >
-            Start Free Trial
+            Create Free Account
           </button>
           <button
-            class="border-2 border-white text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all"
+            class="border border-white/30 bg-white/10 backdrop-blur text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
           >
-            Schedule Demo
+            Contact Sales
           </button>
         </div>
       </div>
@@ -889,28 +802,50 @@ console.log(response.data);
 
     <!-- Footer -->
     <footer
-      id="contact"
-      class="bg-gray-900 text-gray-300 py-16 px-4 sm:px-6 lg:px-8"
+      class="bg-slate-950 text-slate-400 py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-900"
     >
       <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-4 gap-12 mb-12">
-          <div>
-            <div class="flex items-center space-x-2 mb-4">
-              <div
-                class="w-8 h-8 bg-linear-to-br from-teal-500 to-blue-600 rounded-lg flex items-center justify-center"
-              >
-                <div class="w-5 h-5 border-2 border-white rounded"></div>
-              </div>
+        <div class="grid md:grid-cols-4 gap-12 mb-16">
+          <div class="col-span-1 md:col-span-1">
+            <div class="flex items-center gap-2 mb-6">
+              <img
+                src="/logo.png"
+                alt="Logo"
+                class="h-8 w-auto brightness-0 invert opacity-80"
+              />
               <span class="text-xl font-bold text-white">VipAutoPay</span>
             </div>
-            <p class="text-sm text-gray-400 leading-relaxed">
-              Modern payment gateway infrastructure for Bangladesh's digital
-              economy.
+            <p class="text-sm leading-relaxed mb-6">
+              The most reliable payment gateway for Bangladesh. Built for
+              developers, trusted by businesses.
             </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-slate-400 hover:text-white transition-colors"
+                ><i class="fab fa-twitter text-xl"></i
+              ></a>
+              <a
+                href="#"
+                class="text-slate-400 hover:text-white transition-colors"
+                ><i class="fab fa-facebook text-xl"></i
+              ></a>
+              <a
+                href="#"
+                class="text-slate-400 hover:text-white transition-colors"
+                ><i class="fab fa-linkedin text-xl"></i
+              ></a>
+              <a
+                href="#"
+                class="text-slate-400 hover:text-white transition-colors"
+                ><i class="fab fa-github text-xl"></i
+              ></a>
+            </div>
           </div>
+
           <div>
-            <h4 class="text-white font-semibold mb-4">Product</h4>
-            <ul class="space-y-2 text-sm">
+            <h4 class="text-white font-semibold mb-6">Product</h4>
+            <ul class="space-y-3 text-sm">
               <li>
                 <a href="#" class="hover:text-teal-400 transition-colors"
                   >Features</a
@@ -923,7 +858,7 @@ console.log(response.data);
               </li>
               <li>
                 <a href="#" class="hover:text-teal-400 transition-colors"
-                  >API Status</a
+                  >Security</a
                 >
               </li>
               <li>
@@ -933,9 +868,10 @@ console.log(response.data);
               </li>
             </ul>
           </div>
+
           <div>
-            <h4 class="text-white font-semibold mb-4">Developers</h4>
-            <ul class="space-y-2 text-sm">
+            <h4 class="text-white font-semibold mb-6">Resources</h4>
+            <ul class="space-y-3 text-sm">
               <li>
                 <a href="#" class="hover:text-teal-400 transition-colors"
                   >Documentation</a
@@ -948,22 +884,33 @@ console.log(response.data);
               </li>
               <li>
                 <a href="#" class="hover:text-teal-400 transition-colors"
-                  >SDKs</a
+                  >Status</a
                 >
               </li>
               <li>
                 <a href="#" class="hover:text-teal-400 transition-colors"
-                  >Code Examples</a
+                  >Support</a
                 >
               </li>
             </ul>
           </div>
+
           <div>
-            <h4 class="text-white font-semibold mb-4">Company</h4>
-            <ul class="space-y-2 text-sm">
+            <h4 class="text-white font-semibold mb-6">Company</h4>
+            <ul class="space-y-3 text-sm">
               <li>
                 <a href="#" class="hover:text-teal-400 transition-colors"
-                  >About Us</a
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-teal-400 transition-colors"
+                  >Legal</a
                 >
               </li>
               <li>
@@ -971,40 +918,28 @@ console.log(response.data);
                   >Contact</a
                 >
               </li>
-              <li>
-                <a href="#" class="hover:text-teal-400 transition-colors"
-                  >Privacy Policy</a
-                >
-              </li>
-              <li>
-                <a href="#" class="hover:text-teal-400 transition-colors"
-                  >Terms of Service</a
-                >
-              </li>
             </ul>
           </div>
         </div>
+
         <div
-          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
+          class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <p class="text-sm text-gray-500">
-            © 2026 VipAutoPay. All rights reserved.
-          </p>
-          <div class="flex items-center space-x-2 mt-4 md:mt-0">
-            <span class="text-sm text-gray-500">Contact:</span>
-            <a
-              href="mailto:support@vipautopay.com"
-              class="text-sm text-teal-400 hover:text-teal-300"
+          <p class="text-sm">© 2026 VipAutoPay Inc. All rights reserved.</p>
+          <div class="flex space-x-6 text-sm">
+            <a href="#" class="hover:text-white transition-colors"
+              >Privacy Policy</a
             >
-              support@vipautopay.com
-            </a>
+            <a href="#" class="hover:text-white transition-colors"
+              >Terms of Service</a
+            >
           </div>
         </div>
       </div>
     </footer>
 
-    <script src="src/js/main.ts"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="module" src="/src/js/main.ts"></script>
     <script>
       const swiper = new Swiper(".mySwiper", {
         loop: true, // infinite loop
