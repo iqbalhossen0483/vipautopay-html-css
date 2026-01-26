@@ -303,6 +303,11 @@
                 alt="Brac Bank"
               />
             </div>
+            <div
+              class="swiper-slide flex justify-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100"
+            >
+              <img src="/roket.png" class="h-16 object-contain" alt="rocket" />
+            </div>
           </div>
           <div class="swiper-pagination bottom-0!"></div>
         </div>
@@ -896,7 +901,8 @@
     <script>
       const swiper = new Swiper(".mySwiper", {
         loop: true, // infinite loop
-        slidesPerView: 5, // show 1 slide at a time
+        loopAdditionalSlides: 5,
+        slidesPerView: 5,
         spaceBetween: 20, // gap between slides
         pagination: {
           el: ".swiper-pagination",
@@ -915,21 +921,18 @@
           },
         },
         autoplay: {
-          delay: 3000,
+          delay: 1500,
           disableOnInteraction: false,
         },
         breakpoints: {
-          // When window width is >= 320px
           320: {
             slidesPerView: 2,
             spaceBetween: 20,
           },
-          // When window width is >= 768px
           768: {
             slidesPerView: 3,
             spaceBetween: 20,
           },
-          // When window width is >= 1024px
           1024: {
             slidesPerView: 5,
             spaceBetween: 20,
